@@ -11,6 +11,8 @@ public class Egg {
   public void move() {
     if (key == ' ') {
 
+//we need this code to make dy change based on eggs y posn, so that the egg's ascent and descent mirror real world physics
+// attempt below, doesnt work yet
       /*for (y = 400; y >= 300; dy  10) {
        int dy = 10;
        }
