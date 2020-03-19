@@ -3,26 +3,40 @@ public class Egg {
   private int x = 320;
   private int dy = 10;
   private int dx = 0;
-  private int sizey = 70;
+  private int sizey = 50;
   private int sizex = 50;
   private int check = 0;
   private int counter = 0;
 
-  /*void keyPressed() {
-   if (key == ' ') {
-   check = 1;
-   } else {
-   check = 0;
-   }
-   }*/
-
   public void move() {
     if (key == ' ') {
+
+      /*for (y = 400; y >= 300; dy  10) {
+       int dy = 10;
+       }
+       
+       for (y = 400; y > 300; y <= 100) {
+       int dy = 8;
+       }
+       
+       for (y = 400; y > 100; y <= 180) {
+       int dy = 5;
+       }*/
+      
+      /*if(y <= 100) {
+        dy = 8;
+      }
+      
+      if(y >= 300) {
+        dy = 10;
+      }*/
+        
+
 
       y -= dy;
       x -= dx;
 
-      if (y == 180) {
+      if (y == 160) {
         counter += 1;
       }
 
