@@ -8,7 +8,7 @@ void setup() {
 }
 
 void draw() {
-  background(255,0,0);
+  background(49,49,49);
   egg.move();
   egg.display();
   b1.display();
