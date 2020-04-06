@@ -10,71 +10,35 @@ public class Egg {
 
   public void move() {
     if (key == ' ') {
-
-//we need this code to make dy change based on eggs y posn, so that the egg's ascent and descent mirror real world physics
-// attempt below, doesnt work yet
-      /*for (y = 400; y >= 300; dy  10) {
-       int dy = 10;
-       }
-       
-       for (y = 400; y > 300; y <= 100) {
-       int dy = 8;
-       }
-       
-       for (y = 400; y > 100; y <= 180) {
-       int dy = 5;
-       }*/
       
-      /*if(y <= 100) {
-        dy = 8;
-      }
-      
-      if(y >= 300) {
-        dy = 10;
-      }*/
-        
-
-
-      y -= dy;
-      x -= dx;
-
       if (y == 160) {
-        counter += 1;
+        counter++;
       }
-
-      if (y == 400) {
-        counter += 1;
+      
+      if (y == 650) {
+        y = 400;
+        counter++;
       }
-
-      if (counter%2 == 0) {
+      
+      if (counter%3 == 0) {
         y -= dy;
-        //x -= dx;
       }
-
-      if (counter%2 == 1) {
+      
+      if (counter%3 == 1) {
         y += dy;
-        //x -= dx;
       }
-
-      if (x == 560) {
-        counter += 1;
+      
+      if (counter%3 == 2) {
+        y += 0;
       }
-
-      if (x == 0) {
-        counter += 1;
-      }
-
-      if (counter%2 == 0) {
-        y += dy;
-        x += dx;
-      }
-
-      if (counter%2 == 1) {
-        y += dy;
-        x -= dx;
+      
+      if ((key == ' ') && (y == 400) && (keyPressed == true)) {
+        counter++;
       }
     }
   }
+
+
 
   // We need to be able to change dx and dy
 
