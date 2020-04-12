@@ -20,6 +20,8 @@ public class Egg {
         counter++;
       }
       
+      //maybe if loops inside the if loops for arrow keys?
+      
       if (counter%3 == 0) {
         y -= dy;
       }
@@ -30,11 +32,12 @@ public class Egg {
       
       if (counter%3 == 2) {
         y += 0;
-      }
-      
-      if ((key == ' ') && (y == 400) && (keyPressed == true) && (counter%3 == 2)) {
+        if ((key == ' ') && (y == 400) && (keyPressed == true)) {
         counter++;
       }
+      }
+      
+      
       
       }
     }
