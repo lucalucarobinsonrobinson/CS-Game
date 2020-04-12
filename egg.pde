@@ -2,7 +2,7 @@ public class Egg {
   private int y = 400;
   private int x = 320;
   private int dy = 10;
-  private int dx = 0;
+  private int dx = 2;
   private int sizey = 50;
   private int sizex = 50;
   private int check = 0;
@@ -32,11 +32,12 @@ public class Egg {
         y += 0;
       }
       
-      if ((key == ' ') && (y == 400) && (keyPressed == true)) {
+      if ((key == ' ') && (y == 400) && (keyPressed == true) && (counter%3 == 2)) {
         counter++;
       }
+      
+      }
     }
-  }
 
 
 
