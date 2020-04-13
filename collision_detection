@@ -1,0 +1,13 @@
+/*int eggX = egg.getX();
+int eggY = egg.getY();
+int basketX = b1.getX();
+int basketY = b1.getY();
+
+public boolean collide(eggX, basketX, eggY, basketY) {
+
+  if (eggX == basketX && eggY == basketY) {
+    return true;
+  }
+} else return false; 
+{
+}*/
