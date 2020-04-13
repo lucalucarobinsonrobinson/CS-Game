@@ -3,6 +3,7 @@ Basket b2 = new Basket(400,200,-5,0,80,40,0);
 Start start = new Start(); 
 Egg egg = new Egg();
 
+int life = egg.getLifeCount();
 void setup() {
   size(640, 480);
 }
@@ -16,4 +17,5 @@ void draw() {
   b2.display();
   b2.move();
   start.display();
+  egg.LifeCount();
 }
