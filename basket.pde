@@ -1,13 +1,13 @@
 public class Basket {
-  private int y;
-  private int x;
-  private int dy;
-  private int dx;
-  private int sy;
-  private int sx;
-  private int counter;
+  private float y;
+  private float x;
+  private float dy;
+  private float dx;
+  private float sy;
+  private float sx;
+  private float counter;
   
-  public Basket(int xloc, int yloc, int vx, int vy, int sizex, int sizey, int c) {
+  public Basket(float xloc, float yloc, float vx, float vy, float sizex, float sizey, float c) {
     x = xloc;
     y = yloc;
     dx = vx;
@@ -39,7 +39,7 @@ public class Basket {
   }
   
   public void display() {
-    fill(82,196,36);
+    fill(255,0,255);
     rect(x, y, sx, sy);
   }
 }
