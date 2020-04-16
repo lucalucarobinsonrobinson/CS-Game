@@ -1,53 +1,63 @@
-public class Egg {
-  private int y = 400;
-  private int x = 320;
-  private int dy = 10;
-  private int dx = 2;
-  private int sizey = 50;
-  private int sizex = 50;
-  private int check = 0;
-  private int counter = 0;
-  private int c = 12;
+boolean jump;
 
-  public void move() {
-    if (key == ' ') {
-
-      if (y == 160) {
-        counter++;
-      }
-
-      if (y == 650) {
-        y = 400;
-        counter++;
-      }
-
-      //maybe if loops inside the if loops for arrow keys?
-
-      if (counter%3 == 0) {
-        y -= dy;
-      }
-
-      if (counter%3 == 1) {
-        y += dy;
-      }
-
-      if (counter%3 == 2) {
-        y += 0;
-        if ((key == ' ') && (y == 400) && (keyPressed == true)) {
-          counter++;
-        }
-      }
-    }
+void keyReleased() {
+   switch(key) {
+     case ' ':
+       jump = true;
+       break;
+   }
   }
-
-  public int getLifeCount() { 
+  
+  
+public class Egg {
+  private float y = 400;
+  private float x = 320;
+  private float vely = 0;
+  private float velx = 0;
+  private float sizey = 50;
+  private float sizex = 50;
+  private float check = 0;
+  private float counter = 0;
+  private float c = 12;
+  private float maxyspeed = 10;
+  
+  
+  
+float G = 0.75;
+float initVel = -15;
+  public void update() {
+    if(jump) {
+      vely = initVel;
+      jump = false;
+    }
+    
+    // always add gravity to vel.y BEFORE
+    // adding the vel.y to the pos.y
+    vely += G;
+    
+    //
+    x += velx;
+    y += vely;
+    
+    //constrain the y position so that it
+    // doesnt go too low
+    y = constrain(y, 0, 400);
+    
+    //if (y == 550) {
+    //  y = 400;
+    //  vely = 0;
+    //}
+  }
+/*
+  public float getLifeCount() { 
     c = 12; 
-    if (y > 400) { 
+    if (y == 500) { 
       return c -= 1;
     } else { 
       return c;
     }
   } 
+
   public void LifeCount() { 
     c = 12; 
     if (y > 400) { 
@@ -57,16 +67,17 @@ public class Egg {
       text("12", 50, 50);
     }
   } 
-  private int getX() { 
+  private float getX() { 
     return x;
   } 
-  private int getY() { 
+  private float getY() { 
     return y;
   }
+*/
 
 
 
-  // We need to be able to change dx and dy
+  // We need to be able to change velx and vely
 
   // We need to be able to see where our ball is
 
