@@ -1,7 +1,8 @@
 //Basket b1 = new Basket(400,100,5,0,80,40,0);
-Basket b2 = new Basket(400,200,-5,0,80,40,0);
+//Basket b2 = new Basket(280, 200, 0, 0, 80, 40, 0);
+Basket b2 = new Basket(320,200,-5,0,80,40,0);
 Start start = new Start(); 
-Egg egg = new Egg();
+Egg egg = new Egg(400, 320, 0, 0, 50, 50, 0, 0, 12, 10);
 
 //float life = egg.getLifeCount();
 void setup() {
@@ -9,7 +10,7 @@ void setup() {
 }
 
 void draw() {
-  background(49,49,49);
+  background(49, 49, 49);
   egg.display();
   egg.update();
   //b1.display();
@@ -18,4 +19,7 @@ void draw() {
   b2.move();
   start.display();
   //egg.LifeCount();
+  collide();
+  animateCollision();
+  collisionTest();
 }
