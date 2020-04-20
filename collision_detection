@@ -1,13 +1,27 @@
-/*int eggX = egg.getX();
-int eggY = egg.getY();
-int basketX = b1.getX();
-int basketY = b1.getY();
+float eggX = egg.getX();
+float eggY = egg.getY();
+float basketX = b2.getX();
+float basketY = b2.getY();
 
-public boolean collide(eggX, basketX, eggY, basketY) {
+boolean collision;
 
-  if (eggX == basketX && eggY == basketY) {
-    return true;
+void collide() {
+  if (((eggX >= basketX) && eggX <= (basketX + b2.sx)) &&
+    ((eggY >= basketY) && eggY <= (basketY + b2.sy))) {
+    collision = true;
   }
-} else return false; 
-{
-}*/
+}
+
+void animateCollision() {
+  if (collision == true) {
+    Egg egg1 = new Egg(basketY, basketX, 0, 0, 50, 50, 0, 0, 12, 10);
+    egg1.display();
+    egg1.update();
+  }
+}
+
+void collisionTest() {
+  if (collision == true) {
+    println("collision");
+  }
+}
