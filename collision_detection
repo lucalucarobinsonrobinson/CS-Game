@@ -1,22 +1,16 @@
-float eggX = egg.getX();
-float eggY = egg.getY();
-float basketX = b2.getX();
-float basketY = b2.getY();
-
 boolean collision;
 
 void collide() {
-  if (((eggX >= basketX) && eggX <= (basketX + b2.sx)) &&
-    ((eggY >= basketY) && eggY <= (basketY + b2.sy))) {
+  if (((egg.getX() >= b2.getX()) && egg.getX() <= (b2.getX() + b2.sx)) &&
+    ((egg.getY() >= b2.getY()) && egg.getY() <= (b2.getY() + b2.sy))) {
     collision = true;
   }
 }
 
 void animateCollision() {
   if (collision == true) {
-    Egg egg1 = new Egg(basketY, basketX, 0, 0, 50, 50, 0, 0, 12, 10);
-    egg1.display();
-    egg1.update();
+    egg.setX(b2.getX()+40);
+    egg.setY(b2.getY());
   }
 }
 
