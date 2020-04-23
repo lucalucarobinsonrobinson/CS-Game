@@ -21,9 +21,9 @@ public class Egg {
   private float c = 12;
   private float maxyspeed = 10;
   
-  public Egg(float yval, float xval, float vely, float velx, float sizey, float sizex, float check, float counter, float c, float maxyspeed) {
-    y = yval;
-    x = xval;
+  public Egg(float y, float x, float vely, float velx, float sizey, float sizex, float check, float counter, float c, float maxyspeed) {
+    y = y;
+    x = x;
     vely = vely;
     velx = velx;
     sizey = sizex;
@@ -34,7 +34,7 @@ public class Egg {
   }
   
 float G = 0.75;
-float initVel = -20;
+float initVel = -15;
   public void update() {
     if(jump) {
       vely = initVel;
@@ -59,20 +59,11 @@ float initVel = -20;
     //}
   }
   
-  public float getX() { 
+  private float getX() { 
     return x;
-  }
-  
-  public void setX(float aX) {
-    x = aX;
-  }
-  
+  } 
   private float getY() { 
     return y;
-  }
-  
-  public void setY(float aY) {
-    y = aY;
   }
 
   // We need to be able to change velx and vely
