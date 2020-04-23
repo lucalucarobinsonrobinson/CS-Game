@@ -3,10 +3,12 @@
 Basket b2 = new Basket(320,200,-5,0,80,40,0);
 Start start = new Start(); 
 Egg egg = new Egg(400, 320, 0, 0, 50, 50, 0, 0, 12, 10);
+Timer startTimer;
 
 //float life = egg.getLifeCount();
 void setup() {
   size(640, 480);
+  startTimer = new Timer(10);
 }
 
 void draw() {
@@ -22,4 +24,8 @@ void draw() {
   collide();
   animateCollision();
   collisionTest();
+  if(startTimer.getTime() > 0) {
+    startTimer.countDown();
+  }
+  text(startTimer.getTime(),20,20);
 }
