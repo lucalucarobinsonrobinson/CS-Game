@@ -1,0 +1,22 @@
+class Timer
+{
+  float Time;
+  
+  Timer(float set) //Constructor when you create a new Timer
+  {
+    Time = set;
+  }
+  float getTime() //returns the current time
+  {
+    return(Time);
+  }
+  void setTime(float set) //set the timer to whatever you put as your temp variable
+  {
+    Time = set;
+  }
+  void countDown() //update the timer
+  {
+    Time -= 1/frameRate;
+  }
+  
+}
