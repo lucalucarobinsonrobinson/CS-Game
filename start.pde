@@ -1,11 +1,11 @@
 public class Start {
   private float y = 400;
   private float x = 280;
-  private float dy = 0;
-  private float dx = 5;
+  //private float dy = 0;
+  //private float dx = 5;
   private float sizey = 40;
   private float sizex = 80;
-  private float counter = 0;
+  //private float counter = 0;
 
   /*public void move() { 
     if (x == 560) {
