@@ -1,14 +1,28 @@
 boolean jump;
 
 void keyReleased() {
-   switch(key) {
-     case ' ':
-       jump = true;
-       break;
-   }
+  switch(key) {
+  case ' ':
+    jump = true;
+    break;
   }
-  
-  
+}
+
+int jumpCount() {
+  int jumpCount = 0;
+  if (jump == true) {
+    return jumpCount +1;
+  } else {
+    return jumpCount;
+  }
+}
+
+void jump() {
+  if (jump) {
+    println("jump");
+  }
+}
+
 public class Egg {
   private float y = 400;
   private float x = 320;
@@ -20,10 +34,10 @@ public class Egg {
   private float counter = 0;
   private float c = 12;
   private float maxyspeed = 10;
-  
-  public Egg(float y, float x, float vely, float velx, float sizey, float sizex, float check, float counter, float c, float maxyspeed) {
-    y = y;
-    x = x;
+
+  public Egg(float yval, float xval, float vely, float velx, float sizey, float sizex, float check, float counter, float c, float maxyspeed) {
+    y = yval;
+    x = xval;
     vely = vely;
     velx = velx;
     sizey = sizex;
@@ -32,38 +46,47 @@ public class Egg {
     c = c;
     maxyspeed = maxyspeed;
   }
-  
-float G = 0.75;
-float initVel = -15;
+
+  float G = 0.75;
+  float initVel = -15;
   public void update() {
-    if(jump) {
+    if (jump) {
       vely = initVel;
       jump = false;
     }
-    
+
     // always add gravity to vel.y BEFORE
     // adding the vel.y to the pos.y
     vely += G;
-    
+
     //
     x += velx;
     y += vely;
-    
+
     //constrain the y position so that it
     // doesnt go too low
     y = constrain(y, 0, 400);
-    
+
     //if (y == 550) {
     //  y = 400;
     //  vely = 0;
     //}
   }
-  
-  private float getX() { 
+
+  public float getX() { 
     return x;
-  } 
+  }
+
+  public void setX(float aX) {
+    x = aX;
+  }
+
   private float getY() { 
     return y;
+  }
+
+  public void setY(float aY) {
+    y = aY;
   }
 
   // We need to be able to change velx and vely
