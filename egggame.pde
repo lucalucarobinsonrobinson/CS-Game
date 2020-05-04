@@ -1,13 +1,4 @@
-public float xloc = 300;
-public float yloc = 200;
-public float vx = -5;
-public float vy = 0;
-public float sizex = 80;
-public float sizey = 40;
-public float c = 0;
-
-//Basket b2 = new Basket(320,200,-5,0,80,40,0);
-Basket b2 = new Basket(xloc,yloc,vx,vy,sizex,sizey,c);
+Basket b2 = new Basket(320,200,-5,0,80,40,0);
 Start start = new Start(); 
 Egg egg = new Egg(400, 320, 0, 0, 50, 50, 0, 0, 12, 10);
 Score score = new Score();
@@ -37,4 +28,12 @@ void draw() {
     startTimer.countDown();
   }
   text(startTimer.getTime(),20,20);
+  
+  if(collision == true) {   
+    egg.setY(400);
+    egg.setX(320);
+    collision = false;
+    egg.setvelX(0);
+    b2.setY(random(50, 350));  
+  }
 }
