@@ -24,7 +24,22 @@ public class Basket {
   private float getY() {
     return y;
   }
+  
+  public void setX(float bX) {
+    x = bX;
+  }
+  
+  public void setY(float bY) {
+    y = bY;
+  }
+  
+  public void setdX(float bdX) {
+    dx = bdX;
+  }
 
+  public void setdY(float bdY) {
+    dy = bdY;
+  }
 
   public void move() { 
 // update x n y posn
@@ -34,6 +49,10 @@ public class Basket {
     if (x == (width - sx)) {
       counter += 1;
     }
+    
+    //if (x == (height - sy)) {
+    //  counter += 1;
+    //}
 
     if (x == 0) {
       counter += 1;
