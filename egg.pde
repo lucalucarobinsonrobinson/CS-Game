@@ -88,6 +88,10 @@ public class Egg {
   public void setY(float aY) {
     y = aY;
   }
+  
+  public void setvelX(float vX) {
+    velx = vX;
+  }
 
   // We need to be able to change velx and vely
 
