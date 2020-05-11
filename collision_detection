@@ -9,7 +9,7 @@ boolean collision;
 
 void collide() {
   if ((egg.vely > 0 && (egg.getX() >= b2.getX()) && egg.getX() <= (b2.getX() + 25)) &&
-    ((egg.getY() >= b2.getY()) && egg.getY() <= (b2.getY() + b2.sy))) {
+    ((egg.getY() >= b2.getY()) && egg.getY() <= (b2.getY() + b2.sy)) && (egg.getY() != 400)) {
     collision = true;
   }
 }
