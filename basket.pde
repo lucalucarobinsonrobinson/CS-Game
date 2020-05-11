@@ -5,16 +5,18 @@ public class Basket {
   private float dx;
   private float sy;
   private float sx;
-  private float counter;
+  private float counterx;
+  private float countery;
 
-  public Basket(float xloc, float yloc, float vx, float vy, float sizex, float sizey, float c) {
+  public Basket(float xloc, float yloc, float vx, float vy, float sizex, float sizey, float cx, float cy) {
     x = xloc;
     y = yloc;
     dx = vx;
     dy = vy;
     sx= sizex;
     sy = sizey;
-    counter = c;
+    counterx = cx;
+    countery = cy;
   }
 
   private float getX() {
@@ -46,26 +48,40 @@ public class Basket {
 // check x posn to see if it is off screen (<0) or greater than width
 // if it is off screen, dx * -1
 
-    if (x == (width - sx)) {
-      counter += 1;
+    if (x >= (width - sx)) {
+      counterx += 1;
+    }
+    
+    if (y >= (height - sy)) {
+      countery += 1;
     }
     
     //if (x == (height - sy)) {
     //  counter += 1;
     //}
 
-    if (x == 0) {
-      counter += 1;
+    if (x <= 0) {
+      counterx += 1;
+    }
+    
+    if (y <= 0) {
+      countery += 1;
     }
 
-    if (counter%2 == 0) {
-      y += dy;
+    if (counterx%2 == 0) {
       x += dx;
     }
-
-    if (counter%2 == 1) {
+    
+    if (countery%2 == 0) {
       y += dy;
+    }
+
+    if (counterx%2 == 1) {
       x -= dx;
+    }
+    
+    if (countery%2 == 1) {
+      y -= dy;
     }
   }
 
