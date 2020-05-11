@@ -1,35 +1,25 @@
-public class Start {
-  private float y = 400;
-  private float x = 280;
-  //private float dy = 0;
-  //private float dx = 5;
-  private float sizey = 40;
-  private float sizex = 80;
-  //private float counter = 0;
-
-  /*public void move() { 
-    if (x == 560) {
-      counter += 1;
-    }
-    if (x == 0) {
-      counter += 1;
-    }
-    if (counter%2 == 0) {
-      y += dy;
-      x += dx;
-    }
-    if (counter%2 == 1) {
-      y += dy;
-      x -= dx;
-    }
-  }*/
-
-  // We need to be able to change dx and dy
-
-  // We need to be able to see where our ball is
-
-  public void display() {
-    fill(255, 0, 255);
-    rect(x, y, sizex, sizey);
+class Timer
+{
+  float Time;
+  
+  Timer(float set) //Constructor when you create a new Timer
+  {
+    Time = set;
   }
-} 
+  float getTime() //returns the current time
+  {
+    if(Time > 0) {return(Time);
+    }else{
+    return(0);
+    }
+  }
+  void setTime(float set) //set the timer to whatever you put as your temp variable
+  {
+    Time = set;
+  }
+  void countDown() //update the timer
+  {
+    Time -= 1/frameRate;
+  }
+  
+}
