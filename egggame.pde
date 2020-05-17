@@ -7,26 +7,37 @@ public int score = 0;
 //float life = egg.getLifeCount();
 void setup() {
   size(640, 480);
-  startTimer = new Timer(10);
+  startTimer = new Timer(90);
 }
 
 void draw() {
   background(49, 49, 49);
+  collide();
   egg.display();
   egg.update();
+  collide();
   b2.display();
   b2.move();
   start.display();
   collide();
   animateCollision();
+  text(startTimer.getTime(),20,20);
   if(startTimer.getTime() > 0) {
     startTimer.countDown();
   }
-  text(startTimer.getTime(),20,20);
-  
+  if(startTimer.getTime() <= 0) {
+    fill(200);
+    rect(-10,-10,650,500);
+    fill(0);
+    textSize(20);
+    text("Game over! Your score is:", 200, 100);
+    textSize(150);
+    text(score, 275, 270);
+
+  }
   if(collision == true) {
     score++;
-    println(score);
+    //println(score);
     egg.setY(400);
     egg.setX(320);
     collision = false;
