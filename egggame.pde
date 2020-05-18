@@ -26,9 +26,9 @@ void draw() {
     startTimer.countDown();
   }
   if(startTimer.getTime() <= 0) {
-    fill(200);
+    background(255,0,255);
     rect(-10,-10,650,500);
-    fill(0);
+    fill(49,49,49);
     textSize(20);
     text("Game over! Your score is:", 200, 100);
     textSize(150);
