@@ -1,5 +1,6 @@
 boolean jump;
 
+//jumps
 void keyReleased() {
   switch(key) {
   case ' ':
@@ -47,12 +48,13 @@ public class Egg {
     maxyspeed = maxyspeed;
   }
 
+//set gravity and such things
   float G = 0.75;
   float initVel = -15;
   public void update() {
     if (jump) {
-      vely = initVel;
-      jump = false;
+      vely = initVel; //set it to the start vel
+      jump = false; //not jumping anymore
     }
 
     // always add gravity to vel.y BEFORE
@@ -73,6 +75,7 @@ public class Egg {
     //}
   }
 
+//be able to pull the x and y values of the eggs position
   public float getX() { 
     return x;
   }
