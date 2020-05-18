@@ -19,6 +19,7 @@ public class Basket {
     countery = cy;
   }
 
+//make it so we can change the basket x and y and velx and vely
   private float getX() {
     return x;
   }
